@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../Hooks/useAuthContext";
 import classes from "../styles/SignIn.module.css";
 import Button from "./Button";
@@ -25,7 +25,7 @@ export default function SignIn() {
         <TextInput
           id={`username`}
           name={`username`}
-          text={`Username`}
+          text={`Email`}
           type={`text`}
         />
         <TextInput
@@ -35,6 +35,9 @@ export default function SignIn() {
           type={`password`}
         />
         <Button type={`submit`} text={`Signin`} />
+        <p>
+          Don't have an account? <Link to="/signup">Signup</Link>
+        </p>
       </form>
     </div>
   );

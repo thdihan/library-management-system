@@ -1,0 +1,14 @@
+.borrowed-books-history table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.borrowed-books-history table tr th {
+  background-color: #ddd;
+}
+.borrowed-books-history table tr td,
+.borrowed-books-history table tr th {
+  padding: 10px;
+  border: 1px solid #666;
+}

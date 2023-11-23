@@ -13,7 +13,7 @@ export default function Navbar({ items }) {
   return (
     <nav className={`${classes["navbar-component"]}`}>
       <div className={`${classes["profile-area"]}`}>
-        <h2>{_.upperCase(user?.username)}</h2>
+        <h2>{_.upperCase(user?.username.split("@")[0])}</h2>
         <p>{_.capitalize(user?.type)}</p>
         <p onClick={handleLogout}>Logout</p>
       </div>

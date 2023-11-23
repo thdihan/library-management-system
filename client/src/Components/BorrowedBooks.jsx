@@ -14,28 +14,7 @@ export default function BorrowedBooks() {
     <div className={`body-area`}>
       {" "}
       <div className={`${classes["book-list-component"]}`}>
-        <div className={`${classes["search-bar"]}`}>
-          <TextInput
-            id={`search-bar`}
-            name={`Search Bar`}
-            type={`text`}
-            placeholder={`Search By Name`}
-          />
-        </div>
-        <div className={`${classes["filter-bar"]}`}>
-          <Dropdown
-            name={`genre-filter`}
-            id={`genre-filter`}
-            options={genre}
-            placeholder={`Filter By Genre`}
-          />
-          <Dropdown
-            name={`genre-filter`}
-            id={`genre-filter`}
-            options={genre}
-            placeholder={`Filter By Author`}
-          />
-        </div>
+        <h1>Borrowed Books</h1>
         <div className={`${classes["book-list"]}`}>
           {!loading &&
             borrowedBooks?.map((book, index) => {

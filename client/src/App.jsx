@@ -8,6 +8,7 @@ import AddBooks from "./Components/AddBooks";
 import UserList from "./Components/UserList";
 import { AuthContextProvider } from "./Context/AuthContext";
 import BorrowedBooks from "./Components/BorrowedBooks";
+import BorrowedHistory from "./Components/BorrowedHistory";
 function App() {
   return (
     <AuthContextProvider>
@@ -21,6 +22,7 @@ function App() {
             <Route path="add-books" element={<AddBooks />} />
             <Route path="user-list" element={<UserList />} />
             <Route path="borrowed-books" element={<BorrowedBooks />} />
+            <Route path="borrowed-history" element={<BorrowedHistory />} />
           </Route>
         </Routes>
       </Router>

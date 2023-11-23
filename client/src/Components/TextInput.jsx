@@ -10,7 +10,9 @@ export default function TextInput({ id, text, name, type, value, ...rest }) {
         name={name}
         id={id}
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
         {...rest}
       />
     </div>

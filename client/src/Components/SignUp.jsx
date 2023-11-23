@@ -3,6 +3,7 @@ import TextInput from "./TextInput";
 import classes from "../styles/SignUp.module.css";
 import Dropdown from "./Dropdown";
 import { useSignup } from "../Hooks/useSignup";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
   const { signup } = useSignup();
@@ -23,7 +24,7 @@ export default function SignUp() {
         <TextInput
           id={`username`}
           name={`username`}
-          text={`Username`}
+          text={`Email`}
           type={`text`}
         />
         <TextInput
@@ -44,7 +45,10 @@ export default function SignUp() {
           id={`user-type`}
           options={["teacher", "student", "librarian"]}
         />
-        <Button type={`submit`} text={`Signin`} />
+        <Button type={`submit`} text={`Signup`} />
+        <p>
+          Have an account? <Link to="/signin">Signin</Link>
+        </p>
       </form>
     </div>
   );
