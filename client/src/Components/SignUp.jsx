@@ -42,7 +42,7 @@ export default function SignUp() {
           text={`User Type`}
           name={`type`}
           id={`user-type`}
-          options={["teacher", "student"]}
+          options={["teacher", "student", "librarian"]}
         />
         <Button type={`submit`} text={`Signin`} />
       </form>

@@ -22,6 +22,9 @@ app.use("/librarian", librarianRoutes);
 app.get("/", (req, res) => {
   res.send("Welcome");
 });
+app.post("/abcd", (req, res) => {
+  res.send("Welcome");
+});
 
 //db connection
 mongoose

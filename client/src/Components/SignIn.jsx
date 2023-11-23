@@ -13,7 +13,8 @@ export default function SignIn() {
     console.log("Form Data Example : ", formDataObject);
     try {
       const res = await login(formDataObject.username, formDataObject.password);
-      console.log(res);
+      console.log(res.data);
+      navigate("/");
     } catch (err) {
       console.log("LOGIN FUNCTION ERROR", err);
     }

@@ -1,9 +1,8 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: `http://localhost:5001"`,
+  baseURL: `http://localhost:5001`,
 });
-
 /** LOGIN*/
 
 // const response = await UserApi.post(

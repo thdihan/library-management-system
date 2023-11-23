@@ -7,6 +7,7 @@ import Layout from "./Components/Layout";
 import AddBooks from "./Components/AddBooks";
 import UserList from "./Components/UserList";
 import { AuthContextProvider } from "./Context/AuthContext";
+import BorrowedBooks from "./Components/BorrowedBooks";
 function App() {
   return (
     <AuthContextProvider>
@@ -19,6 +20,7 @@ function App() {
             <Route path="" element={<Home />} />
             <Route path="add-books" element={<AddBooks />} />
             <Route path="user-list" element={<UserList />} />
+            <Route path="borrowed-books" element={<BorrowedBooks />} />
           </Route>
         </Routes>
       </Router>

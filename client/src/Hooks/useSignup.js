@@ -1,5 +1,6 @@
 import { useState } from "react";
 import UserApi from "../apis/UserApi";
+import axios from "axios";
 
 export const useSignup = () => {
   const [error, setError] = useState(null);
@@ -21,7 +22,7 @@ export const useSignup = () => {
       );
 
       const data = response.data;
-
+      console.log(response.data);
       setIsLoading(false);
       return { data: data };
     } catch (err) {

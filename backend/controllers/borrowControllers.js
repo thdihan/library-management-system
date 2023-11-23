@@ -6,7 +6,7 @@ const borrowBook = async (req, res) => {
   const token = authorization.split(" ")[1];
   const { bookId } = req.body;
   try {
-    const { _id } = jwt.verify(token, process.env.JWT_SECRET);
+    const { _id } = jwt.verify(token, "mysecret123");
     const borrowed = await Borrow.create({
       userId: _id,
       bookId,
@@ -61,7 +61,7 @@ const getUserBorrowedBooks = async (req, res) => {
   const { authorization } = req.headers;
   const token = authorization.split(" ")[1];
   try {
-    const { _id } = jwt.verify(token, process.env.JWT_SECRET);
+    const { _id } = jwt.verify(token, "mysecret123");
     const borrowedBooks = await Borrow.find({ userId: _id })
       .populate({
         path: "userId",

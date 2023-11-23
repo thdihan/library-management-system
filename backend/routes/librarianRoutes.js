@@ -13,9 +13,9 @@ const { getAllUsers, deleteUser } = require("../controllers/userControllers");
 
 router.route("/add-book").post(requireAuth, addBook);
 router.route("/get-all-books").get(requireAuth, getAllBooks);
-router.route("/delete-book").delete(requireAuth, deleteBook);
+router.route("/delete-book").post(requireAuth, deleteBook);
 router.route("/update-book").put(requireAuth, updateBook);
 router.route("/get-all-users").get(requireAuth, getAllUsers);
-router.route("/delete-user").delete(requireAuth, deleteUser);
+router.route("/delete-user").post(requireAuth, deleteUser);
 
 module.exports = router;

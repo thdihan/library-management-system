@@ -71,7 +71,7 @@ const getAllUsers = async (req, res) => {
 const deleteUser = async (req, res) => {
   const { _id } = req.body;
   try {
-    const deletedUser = await User.findByIdAndRemove(_id);
+    const deletedUser = await User.findByIdAndDelete(_id);
 
     if (!deletedUser) {
       throw Error("User not found");

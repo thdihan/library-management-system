@@ -31,7 +31,7 @@ const getAllBooks = async (req, res) => {
 const deleteBook = async (req, res) => {
   const { _id } = req.body;
   try {
-    const deletedBook = await Book.findByIdAndRemove(_id);
+    const deletedBook = await Book.findByIdAndDelete(_id);
 
     if (!deletedBook) {
       throw Error("Book not found");
