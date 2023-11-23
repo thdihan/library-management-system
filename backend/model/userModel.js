@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
+  //HERE THE USERNAME IS CONSIDERED EMAIL TO SEND THE NOTIFICATION VIA MAIL
   username: {
     type: String,
   },

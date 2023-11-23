@@ -1,5 +1,6 @@
 const Borrow = require("../model/borrowModel");
 const jwt = require("jsonwebtoken");
+const { sendEmail } = require("../utilities/utilities");
 
 const borrowBook = async (req, res) => {
   const { authorization } = req.headers;
@@ -12,6 +13,19 @@ const borrowBook = async (req, res) => {
       bookId,
     });
     res.status(200).json({ borrowed });
+    const borrowedBook = await Borrow.findById(borrowed._id)
+      .populate({
+        path: "userId",
+        model: "User",
+      })
+      .populate({
+        path: "bookId",
+        model: "Book",
+      });
+
+    //NOTIFYING THROUGH MESSAGE
+    const message = `You have borrowed the book --\nBook Name: ${borrowedBook.bookId.name}\nAuthor: ${borrowedBook.bookId}\nDue Date: ${borrowedBook.dueDate}`;
+    sendEmail(username, "Book Borrow Confirmation", message);
   } catch (error) {
     res.status(400).json({
       error: error.message,
@@ -50,6 +64,19 @@ const returnBook = async (req, res) => {
       }
     );
     res.status(200).json({ returned });
+    const returnedBook = await Borrow.findById(_id)
+      .populate({
+        path: "userId",
+        model: "User",
+      })
+      .populate({
+        path: "bookId",
+        model: "Book",
+      });
+
+    //NOTIFYING THROUGH MESSAGE
+    const message = `You have returned the book --\nBook Name: ${returnedBook.bookId.name}\nAuthor: ${returnedBook.bookId}\nReturned On: ${returnedBook.returnDate}`;
+    sendEmail(username, "Return Book Confirmation", message);
   } catch (error) {
     res.status(400).json({
       error: error.message,
