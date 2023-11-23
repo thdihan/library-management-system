@@ -17,11 +17,11 @@ const userRoutes = require("./routes/userRoutes");
 const librarianRoutes = require("./routes/librarianRoutes");
 
 //routes
-app.use("/", userRoutes);
+app.use("", userRoutes);
 app.use("/librarian", librarianRoutes);
-// app.get("/", (req, res) => {
-//     res.send("Welcome");
-//   });
+app.get("/", (req, res) => {
+  res.send("Welcome");
+});
 
 //db connection
 mongoose

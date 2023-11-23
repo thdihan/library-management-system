@@ -2,13 +2,20 @@ import Button from "./Button";
 import TextInput from "./TextInput";
 import classes from "../styles/SignUp.module.css";
 import Dropdown from "./Dropdown";
+import { useSignup } from "../Hooks/useSignup";
 
 export default function SignUp() {
-  function handleSubmit(e) {
+  const { signup } = useSignup();
+  async function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formDataObject = Object.fromEntries(formData);
     console.log("Form Data Example : ", formDataObject);
+    try {
+      await signup(formDataObject);
+    } catch (err) {
+      console.log("SIGNUP ERROR", err);
+    }
   }
   return (
     <div className={`${classes["signup-component"]}`}>
@@ -33,7 +40,7 @@ export default function SignUp() {
         />
         <Dropdown
           text={`User Type`}
-          name={`user-type`}
+          name={`type`}
           id={`user-type`}
           options={["teacher", "student"]}
         />

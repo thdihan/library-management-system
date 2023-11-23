@@ -6,20 +6,23 @@ import SignUp from "./Components/SignUp";
 import Layout from "./Components/Layout";
 import AddBooks from "./Components/AddBooks";
 import UserList from "./Components/UserList";
+import { AuthContextProvider } from "./Context/AuthContext";
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+    <AuthContextProvider>
+      <Router>
+        <Routes>
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
 
-        <Route path="/*" element={<Layout />}>
-          <Route path="" element={<Home />} />
-          <Route path="add-books" element={<AddBooks />} />
-          <Route path="user-list" element={<UserList />} />
-        </Route>
-      </Routes>
-    </Router>
+          <Route path="/*" element={<Layout />}>
+            <Route path="" element={<Home />} />
+            <Route path="add-books" element={<AddBooks />} />
+            <Route path="user-list" element={<UserList />} />
+          </Route>
+        </Routes>
+      </Router>
+    </AuthContextProvider>
   );
 }
 

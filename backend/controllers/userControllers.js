@@ -10,6 +10,7 @@ const generateToken = (_id) => {
 
 const signup = async (req, res) => {
   const { username, password, type } = req.body;
+  console.log("REQ", username, password, type);
   try {
     const exists = await User.findOne({ username });
     if (exists) {
@@ -17,9 +18,14 @@ const signup = async (req, res) => {
     }
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-    const newUser = await create({ username, password: hashedPassword, type });
+    const newUser = await User.create({
+      username,
+      password: hashedPassword,
+      type,
+    });
     res.status(200).json({ newUser });
   } catch (error) {
+    console.log("ERROR: ", error);
     res.status(400).json({
       error: error.message,
     });
@@ -40,7 +46,9 @@ const login = async (req, res) => {
 
     const token = generateToken(exists._id);
 
-    res.status(200).json({ username: exists.username, token });
+    res
+      .status(200)
+      .json({ username: exists.username, token, type: exists.type });
   } catch (error) {
     res.status(400).json({
       error: error.message,
