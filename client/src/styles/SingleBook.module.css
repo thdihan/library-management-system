@@ -1,0 +1,24 @@
+.single-book {
+  width: 33%;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.book-image {
+  width: 100%;
+  height: 50%;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+}
+.book-image img {
+  width: 200px;
+  height: 100%;
+}
+.book-info {
+  margin-top: 10px;
+}
+.book-button {
+  margin-top: 15px;
+}

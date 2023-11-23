@@ -1,0 +1,29 @@
+.signin-component {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signin-component form {
+  background-color: #ddd;
+  padding: 20px;
+  width: 300px;
+}
+
+.signin-component form div {
+  margin-bottom: 10px;
+}
+.signin-component form label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.signin-component form input {
+  width: 100%;
+  padding: 10px;
+}
+.signin-component form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+}

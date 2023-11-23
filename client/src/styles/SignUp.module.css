@@ -1,0 +1,30 @@
+.signup-component {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup-component form {
+  background-color: #ddd;
+  padding: 20px;
+  width: 300px;
+}
+
+.signup-component form div {
+  margin-bottom: 10px;
+}
+.signup-component form label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.signup-component form input,
+.signup-component form select {
+  width: 100%;
+  padding: 10px;
+}
+.signup-component form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+}

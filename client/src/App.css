@@ -1,0 +1,19 @@
+.main-layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.body-area {
+  width: 75%;
+  padding: 20px;
+}
+
+.btn {
+  background-color: #666;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  margin: 0 5px;
+  font-weight: 600;
+}

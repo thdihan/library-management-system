@@ -1,0 +1,19 @@
+.user-list-component table {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.user-list-component table thead tr th {
+  background-color: #ddd;
+}
+.user-list-component table tr td,
+.user-list-component table tr th {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.user-list-component table tr td button {
+  padding: 5px 10px;
+}

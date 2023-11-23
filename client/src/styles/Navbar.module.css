@@ -1,0 +1,20 @@
+.navbar-component {
+  width: 25%;
+  min-height: 100vh;
+  height: 100%;
+  background-color: #ddd;
+}
+
+.profile-area {
+  padding: 40px;
+}
+.navbar-component ul li {
+  padding: 10px 40px;
+}
+.navbar-component ul li a {
+  font-size: 20px;
+  font-weight: 600;
+}
+.navbar-component ul li:hover {
+  background-color: #666;
+}

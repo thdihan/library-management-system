@@ -1,0 +1,11 @@
+.add-book-form input,
+.add-book-form textarea,
+.add-book-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.add-book-form label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
